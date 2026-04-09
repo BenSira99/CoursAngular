@@ -1,16 +1,20 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-//import { Home } from './home/home';
-import { Calculatrice } from './calculatrice/calculatrice';
-import { Jeu } from './components/jeu/jeu';
+import { Component, inject } from '@angular/core';
+import { RouterOutlet, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, Calculatrice, Jeu],
+  standalone: false,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  protected readonly title = signal('tp-angular');
+  private router = inject(Router);
+  protected readonly titre = 'Formation Angular BenSira';
+
+  /**
+   * Méthode de navigation programmatique demandée
+   */
+  naviguer(chemin: string) {
+    this.router.navigate([chemin]);
+  }
 }

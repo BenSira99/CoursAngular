@@ -5,17 +5,15 @@
 }
 
 .conteneur-jeu {
-  max-width: 500px;
+  max-width: 450px;
   margin: 2rem auto;
   padding: 2.5rem;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
   border-radius: 24px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   text-align: center;
-  transition: transform 0.3s ease;
+  box-sizing: border-box;
   animation: apparition 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -36,24 +34,25 @@ h2 {
 }
 
 .carte-status {
-  background: rgba(0, 0, 0, 0.2);
+  background: #f3f4f6;
   padding: 1rem;
   border-radius: 16px;
   margin-bottom: 2rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border: 1px solid #e5e7eb;
 }
 
 .label {
-  color: rgba(255, 255, 255, 0.6);
+  color: #6b7280;
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .valeur {
-  color: #fff;
+  color: #1f2937;
   font-size: 1.5rem;
   font-weight: 700;
   display: block;
@@ -66,15 +65,16 @@ h2 {
 
 input {
   width: 100%;
-  padding: 1rem 1.5rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
   border-radius: 12px;
-  color: #fff;
-  font-size: 1.2rem;
+  color: #1e293b;
+  font-size: 1.4rem;
   outline: none;
   transition: all 0.3s ease;
   text-align: center;
+  box-sizing: border-box;
 }
 
 input:focus {
@@ -126,33 +126,36 @@ input:focus {
 }
 
 .gagne {
-  background: rgba(34, 197, 94, 0.1);
-  border: 1px solid rgba(34, 197, 94, 0.2);
-  color: #4ade80;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #16a34a;
 }
 
 .info {
-  color: rgba(255, 255, 255, 0.8);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #475569;
 }
 
 .perdu {
-  background: rgba(239, 68, 68, 0.1);
-  border: 1px solid rgba(239, 68, 68, 0.2);
-  color: #f87171;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
 }
 
 .bouton-rejouer {
-  margin-top: 1rem;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 1.5rem;
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #cbd5e1;
   padding: 0.8rem 1.5rem;
   border-radius: 12px;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
   transition: all 0.3s ease;
 }
 
 .bouton-rejouer:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: #e2e8f0;
+  border-color: #94a3b8;
 }

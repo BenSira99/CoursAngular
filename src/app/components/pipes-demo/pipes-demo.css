@@ -1,0 +1,78 @@
+.conteneur-pipes {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.titre-interne {
+  color: #6366f1;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.section-exercice {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.section-exercice:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+h3 {
+  font-size: 1.1rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.groupe-saisie {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.input-modern {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-mini {
+  width: 60px;
+  padding: 0.8rem;
+  text-align: center;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+}
+
+.input-modern:focus, .input-mini:focus {
+  border-color: #6366f1;
+}
+
+.resultat {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #4b5563;
+}
+
+.badge {
+  background: #f3f4f6;
+  color: #1f2937;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-weight: 700;
+  margin-left: 0.5rem;
+}
+
+.highlight {
+  background: #6366f1;
+  color: white;
+}

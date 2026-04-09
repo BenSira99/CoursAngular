@@ -4,7 +4,7 @@
   <div class="carte-status">
     <div class="stats">
       <span class="label">Tentatives</span>
-      <span class="valeur">{{ essaisRestants() }} / 5</span>
+      <span class="valeur">{{ essaisRestants }} / 5</span>
     </div>
   </div>
 
@@ -13,9 +13,9 @@
       <input 
         type="number" 
         [(ngModel)]="nombreSaisi" 
-        (keyup.enter)="!jeuTermine() && verifierNombre()"
+        (keyup.enter)="!jeuTermine && verifierNombre()"
         placeholder="Entrez un chiffre..."
-        [disabled]="jeuTermine()"
+        [disabled]="jeuTermine"
         min="1"
         max="100"
       >
@@ -24,23 +24,19 @@
     <button 
       class="bouton-valider" 
       (click)="verifierNombre()" 
-      [disabled]="jeuTermine() || nombreSaisi() === null"
+      [disabled]="jeuTermine || nombreSaisi === null"
     >
       Vérifier mon choix
     </button>
   </div>
 
   <div class="zone-message">
-    @if (message()) {
-      <div class="message" [ngClass]="{'gagne': estGagne(), 'perdu': jeuTermine() && !estGagne(), 'info': !jeuTermine()}">
-        {{ message() }}
-      </div>
-    }
+    <div *ngIf="message" class="message" [ngClass]="{'gagne': estGagne, 'perdu': jeuTermine && !estGagne, 'info': !jeuTermine}">
+      {{ message }}
+    </div>
 
-    @if (jeuTermine()) {
-      <button class="bouton-rejouer" (click)='nouvellePartie()'>
-        Nouvelle Partie 🔄
-      </button>
-    }
+    <button *ngIf="jeuTermine" class="bouton-rejouer" (click)='nouvellePartie()'>
+      Nouvelle Partie 🔄
+    </button>
   </div>
 </div>

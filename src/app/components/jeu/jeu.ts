@@ -1,68 +1,68 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-jeu',
-  standalone: true,
-  imports: [CommonModule, FormsModule],
+  standalone: false,
   templateUrl: './jeu.html',
   styleUrl: './jeu.css',
 })
 export class Jeu {
   // Logique métier en français selon les règles Ben Sira
-  protected readonly nombreSecret = signal<number>(Math.floor(Math.random() * 100) + 1);
-  protected readonly nombreSaisi = signal<number | null>(null);
-  protected readonly message = signal<string>('');
-  protected readonly essaisRestants = signal<number>(5);
-  protected readonly jeuTermine = signal<boolean>(false);
-  protected readonly estGagne = signal<boolean>(false);
+  protected nombreSecret: number = Math.floor(Math.random() * 100) + 1;
+  protected nombreSaisi: number | null = null;
+  protected message: string = '';
+  protected essaisRestants: number = 5;
+  protected jeuTermine: boolean = false;
+  protected estGagne: boolean = false;
 
   /**
    * Vérifie le nombre saisi par l'utilisateur et met à jour l'état du jeu.
    */
   verifierNombre(): void {
-    const saisi = this.nombreSaisi();
-    const secret = this.nombreSecret();
-
-    if (saisi === null || saisi === undefined) {
-      this.message.set('⚠️ Veuillez saisir un nombre valide entre 1 et 100.');
+    if (this.nombreSaisi === null || this.nombreSaisi === undefined) {
+      this.message = '⚠️ Veuillez saisir un nombre valide entre 1 et 100.';
       return;
     }
 
-    if (saisi === secret) {
-      this.message.set('Bravo vous avez gagnez!!!! 🎉');
-      this.jeuTermine.set(true);
-      this.estGagne.set(true);
+    if (this.jeuTermine) return;
+
+    if (this.nombreSaisi === this.nombreSecret) {
+      this.message = 'Bravo vous avez gagné ! 🎉';
+      this.jeuTermine = true;
+      this.estGagne = true;
     } else {
-      this.essaisRestants.update((e: number) => e - 1);
+      this.essaisRestants--;
       
-      if (saisi > secret) {
-        this.message.set('Le nombre saisi est supérieur au nombre secret!!! 🔼');
+      if (this.nombreSaisi > this.nombreSecret) {
+        this.message = 'Le nombre saisi est supérieur au nombre secret ! 🔼';
       } else {
-        this.message.set('Le nombre saisi est inférieur au nombre secret!!! 🔽');
+        this.message = 'Le nombre saisi est inférieur au nombre secret ! 🔽';
       }
 
-      if (this.essaisRestants() <= 0) {
-        this.message.set(`Dommage ! 😢 Le nombre secret était ${secret}.`);
-        this.jeuTermine.set(true);
-        this.estGagne.set(false);
+      if (this.essaisRestants <= 0) {
+        this.message = `Dommage ! 😢 Le nombre secret était ${this.nombreSecret}.`;
+        this.jeuTermine = true;
+        this.estGagne = false;
       }
     }
     
-    // Réinitialisation du champ de saisie après chaque tentative
-    this.nombreSaisi.set(null);
+    // On vide le champ pour la prochaine tentative si le jeu n'est pas fini
+    if (!this.jeuTermine) {
+      this.nombreSaisi = null;
+    }
   }
 
   /**
    * Réinitialise les paramètres du jeu pour une nouvelle partie.
    */
   nouvellePartie(): void {
-    this.nombreSecret.set(Math.floor(Math.random() * 100) + 1);
-    this.nombreSaisi.set(null);
-    this.message.set('');
-    this.essaisRestants.set(5);
-    this.jeuTermine.set(false);
-    this.estGagne.set(false);
+    this.nombreSecret = Math.floor(Math.random() * 100) + 1;
+    this.nombreSaisi = null;
+    this.message = '';
+    this.essaisRestants = 5;
+    this.jeuTermine = false;
+    this.estGagne = false;
   }
 }

@@ -1,4 +1,28 @@
-<!-- app-home></app-home -->
-<app-calculatrice></app-calculatrice>
-<app-jeu></app-jeu>
-<router-outlet></router-outlet>
+<div class="app-container">
+  
+  <!-- BARRE DE NAVIGATION (Boutons avec Router.navigate) -->
+  <header class="navbar">
+    <div class="logo">
+      <h1>{{ titre }}</h1>
+    </div>
+    
+    <nav class="nav-buttons">
+      <button (click)="naviguer('tp1')" class="nav-btn">TP 1 : Bonjour</button>
+      <button (click)="naviguer('tp2')" class="nav-btn">TP 2 : Calculatrice</button>
+      <button (click)="naviguer('tp3')" class="nav-btn">TP 3 : Jeu</button>
+      <button (click)="naviguer('tp4')" class="nav-btn">TP 4 : Pipes</button>
+    </nav>
+  </header>
+
+  <!-- CONTENU DYNAMIQUE -->
+  <main class="content-area">
+    <div class="page-fade">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 — BenSira99 • Formation Angular Avancée</p>
+  </footer>
+
+</div>

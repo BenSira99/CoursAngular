@@ -1,0 +1,55 @@
+<div class="conteneur">
+  <h2 class="titre">Gestion des Étudiants (Formulaires)</h2>
+
+  <div class="formulaire-section">
+    <form [formGroup]="etudiantsForm" (ngSubmit)="ajouterEtudiant()" class="formulaire">
+      
+      <div class="groupe-champ">
+        <label for="nom">Nom :</label>
+        <input id="nom" type="text" formControlName="nom" class="champ-saisie">
+        <div *ngIf="etudiantsForm.get('nom')?.invalid && etudiantsForm.get('nom')?.touched" class="erreur">
+          Le nom est requis (minimum 2 caractères).
+        </div>
+      </div>
+
+      <div class="groupe-champ">
+        <label for="prenom">Prénom :</label>
+        <input id="prenom" type="text" formControlName="prenom" class="champ-saisie">
+        <div *ngIf="etudiantsForm.get('prenom')?.invalid && etudiantsForm.get('prenom')?.touched" class="erreur">
+          Le prénom est requis.
+        </div>
+      </div>
+
+      <div class="groupe-champ">
+        <label for="filiere">Filière :</label>
+        <select id="filiere" formControlName="filiere" class="champ-selection">
+          <option value="Informatique">Informatique</option>
+          <option value="Mathématiques">Mathématiques</option>
+          <option value="Physique">Physique</option>
+        </select>
+      </div>
+
+      <button type="submit" [disabled]="etudiantsForm.invalid" class="bouton-ajouter">
+        Ajouter l'étudiant
+      </button>
+
+    </form>
+  </div>
+
+  <div class="liste-section">
+    <h3>Liste des Étudiants ({{ etudiants.length }})</h3>
+    <div *ngIf="etudiants.length === 0" class="message-vide">
+      Aucun étudiant n'a été ajouté.
+    </div>
+
+    <ul class="liste-etudiants" *ngIf="etudiants.length > 0">
+      <li *ngFor="let etudiant of etudiants" class="etudiant-item">
+        <div class="etudiant-infos">
+          <strong>{{ etudiant.nom | uppercase }} {{ etudiant.prenom }}</strong>
+          <span class="badge-filiere">{{ etudiant.filiere }}</span>
+        </div>
+        <button (click)="supprimerEtudiant(etudiant.id)" class="bouton-supprimer">Supprimer</button>
+      </li>
+    </ul>
+  </div>
+</div>

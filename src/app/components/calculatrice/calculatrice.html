@@ -1,0 +1,41 @@
+<div class="calculatrice-container">
+  <div class="header-calculatrice">
+    <h2>Calculatrice Simple</h2>
+    <span>TP 2 - Data Binding</span>
+  </div>
+
+  <div class="calculatrice">
+    <div class="ecran">
+      {{ ecran }}
+    </div>
+
+    <div class="touches">
+      <!-- Ligne 1 -->
+      <button (click)="effacer()" class="span-3 rouge">EFFACER (AC)</button>
+      <button (click)="choisirOperateur('/')" class="operateur">÷</button>
+
+      <!-- Ligne 2 -->
+      <button (click)="ajouterChiffre('7')">7</button>
+      <button (click)="ajouterChiffre('8')">8</button>
+      <button (click)="ajouterChiffre('9')">9</button>
+      <button (click)="choisirOperateur('*')" class="operateur">×</button>
+
+      <!-- Ligne 3 -->
+      <button (click)="ajouterChiffre('4')">4</button>
+      <button (click)="ajouterChiffre('5')">5</button>
+      <button (click)="ajouterChiffre('6')">6</button>
+      <button (click)="choisirOperateur('-')" class="operateur">−</button>
+
+      <!-- Ligne 4 -->
+      <button (click)="ajouterChiffre('1')">1</button>
+      <button (click)="ajouterChiffre('2')">2</button>
+      <button (click)="ajouterChiffre('3')">3</button>
+      <button (click)="choisirOperateur('+')" class="operateur">+</button>
+
+      <!-- Ligne 5 -->
+      <button (click)="ajouterChiffre('0')" class="span-2">0</button>
+      <button (click)="ajouterChiffre('.')">.</button>
+      <button (click)="calculer()" class="egal">=</button>
+    </div>
+  </div>
+</div>

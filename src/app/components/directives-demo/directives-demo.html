@@ -1,0 +1,66 @@
+<div class="conteneur-directives">
+
+  <!-- 1. Directive d'itération : @for -->
+  <div class="section-demo">
+    <h3>1. Boucle Dynamique (<code>*ngFor</code>)</h3>
+    <p class="description">Itération automatique sur les notes avec gestion des index.</p>
+    
+    <div class="grille-automatique">
+      <ng-container *ngFor="let note of tableauChiffres; let index = index; let premier = first; let dernier = last">
+        <div class="carte-note" [ngClass]="{'border-premier': premier, 'border-dernier': dernier}">
+          <span class="etiquette-note">Note {{ index + 1 }}</span>
+          <span class="valeur-note">{{ note }}</span>
+          
+          <span *ngIf="premier" class="badge-special badge-premier">Début</span>
+          <span *ngIf="dernier" class="badge-special badge-dernier">Fin</span>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <hr class="separateur">
+
+  <!-- 2. Directive Conditionnelle Multiple : @switch -->
+  <div class="section-demo">
+    <h3>2. Sélecteur Multi-choix (<code>[ngSwitch]</code>)</h3>
+    <p class="description">Affichage conditionnel selon la valeur d'une variable.</p>
+
+    <div class="boutons-niveaux">
+      <button (click)="definirNiveau('débutant')" [class.actif]="niveauActuel === 'débutant'">Débutant</button>
+      <button (click)="definirNiveau('intermédiaire')" [class.actif]="niveauActuel === 'intermédiaire'">Intermédiaire</button>
+      <button (click)="definirNiveau('expert')" [class.actif]="niveauActuel === 'expert'">Expert</button>
+      <button (click)="definirNiveau('inconnu')">Inconnu</button>
+    </div>
+
+    <div class="zone-switch" [ngSwitch]="niveauActuel">
+      <div *ngSwitchCase="'débutant'" class="message-switch message-debutant">🌱 Vous êtes au niveau débutant. Prenez votre temps pour apprendre les bases.</div>
+      <div *ngSwitchCase="'intermédiaire'" class="message-switch message-intermediaire">🚀 Niveau intermédiaire ! Vous pouvez maintenant créer des applications fonctionnelles.</div>
+      <div *ngSwitchCase="'expert'" class="message-switch message-expert">🔥 Expert Angular ! L'architecture Standalone n'a plus de secret pour vous.</div>
+      <div *ngSwitchDefault class="message-switch message-defaut">❓ Niveau non reconnu. Veuillez sélectionner un niveau.</div>
+    </div>
+  </div>
+
+  <hr class="separateur">
+
+  <!-- 3. Directive d'attribut : [ngStyle] -->
+  <div class="section-demo">
+    <h3>3. Style Dynamique (<code>[ngStyle]</code>)</h3>
+    <p class="description">Modification du CSS en temps réel en fonction des variables TypeScript.</p>
+
+    <div class="controleur-style">
+      <label for="progressionRange">Ajustez la progression : <strong>{{ niveauProgression }}%</strong></label>
+      <input type="range" id="progressionRange" min="0" max="100" [value]="niveauProgression" (input)="mettreAJourProgression($event)" class="slider">
+      
+      <!-- Barre visuelle via [ngStyle] -->
+      <div class="barre-conteneur">
+        <div class="barre-remplissage" 
+             [ngStyle]="{
+               'width': niveauProgression + '%',
+               'background-color': niveauProgression > 70 ? '#10b981' : (niveauProgression > 30 ? '#f59e0b' : '#ef4444')
+             }">
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
