@@ -1,40 +1,40 @@
-<section style="margin-bottom: 5rem; text-align: left;">
-  <h1 style="color: #1f2937; border-bottom: 4px solid #6366f1; display: block; padding-bottom: 1rem; margin-bottom: 2rem; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 1px;">
+<section class="interpolation-container">
+  <h1 class="demo-title">
     Interpolation et Data Binding (Chapitre 3)
   </h1>
 
-  <div style="background: #f9fafb; padding: 2.5rem; border-radius: 20px; border: 1px solid #e5e7eb; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);">
+  <div class="demo-section">
     
-    <h2 style="color: #4b5563; margin-bottom: 1.5rem; font-size: 1.5rem;">Affichage de données</h2>
+    <h2 class="section-title">Affichage de données</h2>
 
     <!-- EXEMPLE 1 : Objet -->
-    <div style="margin-bottom: 3rem;">
-      <h3 style="color: #6366f1; font-size: 1.1rem; margin-bottom: 1rem;">Exemple 1 : Affichage d'un objet</h3>
-      <ul style="list-style: none; padding: 0; background: white; border-radius: 12px; border: 1px solid #f3f4f6;">
-        <li style="padding: 1rem; border-bottom: 1px solid #f3f4f6;">
-          <strong>Nom :</strong> {{ etudiant.nom }}
+    <div style="margin-bottom: 2rem;">
+      <h3 style="color: #64748b; font-size: 1rem; margin-bottom: 0.75rem;">Exemple 1 : Affichage d'un objet</h3>
+      <ul class="data-list">
+        <li class="data-item">
+          <span class="data-label">Nom :</span> {{ etudiant.nom }}
         </li>
-        <li style="padding: 1rem;">
-          <strong>Prénom :</strong> {{ etudiant.prenom }}
+        <li class="data-item">
+          <span class="data-label">Prénom :</span> {{ etudiant.prenom }}
         </li>
       </ul>
       
-      <div style="margin-top: 1.5rem; padding: 1rem; background: #fffbeb; border-radius: 12px; border-left: 4px solid #f59e0b;">
-        <p style="margin: 0; color: #92400e; font-size: 0.95rem;">
+      <div class="raw-data-box">
+        <p class="raw-data-text">
           <strong>Objet brut :</strong> <code>{{ etudiant }}</code>
         </p>
       </div>
 
-      <p style="margin-top: 1.5rem; font-weight: 600;">Format JSON (Pipe JSON) :</p>
-      <pre style="background: #1f2937; color: #6ee7b7; padding: 1.5rem; border-radius: 12px; font-size: 0.9rem; overflow-x: auto;">{{ etudiant | json }}</pre>
+      <p style="margin-top: 1.5rem; font-weight: 600; font-size: 0.9rem; color: #475569;">Format JSON (Pipe JSON) :</p>
+      <pre class="json-pre">{{ etudiant | json }}</pre>
     </div>
 
-    <hr style="margin: 3rem 0; border: 0; border-top: 1px solid #e5e7eb;">
+    <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #f1f5f9;">
 
     <!-- EXEMPLE 3 : Méthode -->
     <div>
-      <h3 style="color: #6366f1; font-size: 1.1rem; margin-bottom: 1rem;">Exemple 3 : Appel de méthode</h3>
-      <p style="background: #ecfdf5; color: #065f46; padding: 1.2rem; border-radius: 12px; border-left: 6px solid #10b981; font-weight: 700; font-size: 1.1rem;">
+      <h3 style="color: #64748b; font-size: 1rem; margin-bottom: 0.75rem;">Exemple 3 : Appel de méthode</h3>
+      <p class="method-response">
          ✨ {{ direBonjour() }}
       </p>
     </div>

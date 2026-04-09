@@ -1,158 +1,155 @@
 .conteneur-directives {
   background: white;
-  padding: 2.5rem;
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
   text-align: left;
 }
 
 .section-demo {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 h3 {
-  color: #6366f1;
-  font-size: 1.2rem;
+  color: #334155;
+  font-size: 1.15rem;
   margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
 .description {
-  color: #6b7280;
-  font-size: 0.95rem;
-  margin-bottom: 1.5rem;
-  font-style: italic;
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
 }
 
 .separateur {
-  margin: 3rem 0;
+  margin: 2.5rem 0;
   border: 0;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid #f1f5f9;
 }
 
 /* Grille for */
 .grille-automatique {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   gap: 1rem;
 }
 
 .carte-note {
-  background: #f9fafb;
-  padding: 1.5rem 1rem;
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
+  background: #f8fafc;
+  padding: 1.25rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
   text-align: center;
   position: relative;
+  transition: transform 0.2s;
+}
+
+.carte-note:hover {
+  transform: translateY(-2px);
+  border-color: #cbd5e1;
 }
 
 .border-premier {
-  border: 2px solid #10b981;
+  border: 1px solid #94a3b8;
+  background: #f1f5f9;
 }
 
 .border-dernier {
-  border: 2px solid #ef4444;
+  border: 1px solid #94a3b8;
 }
 
 .etiquette-note {
   display: block;
-  font-size: 0.85rem;
-  color: #6b7280;
-  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .valeur-note {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #1f2937;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1e293b;
 }
 
 .badge-special {
   position: absolute;
-  top: -8px;
-  right: -8px;
-  font-size: 0.65rem;
-  padding: 0.2rem 0.5rem;
-  border-radius: 10px;
+  top: -6px;
+  right: -6px;
+  font-size: 0.6rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 6px;
   color: white;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
-.badge-premier { background: #10b981; }
-.badge-dernier { background: #ef4444; }
+.badge-premier { background: #64748b; }
+.badge-dernier { background: #94a3b8; }
 
 /* Boutons Switch */
 .boutons-niveaux {
   display: flex;
-  gap: 0.8rem;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
 }
 
 .boutons-niveaux button {
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  border: 1px solid #d1d5db;
-  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
   cursor: pointer;
   transition: all 0.2s;
-  font-weight: 500;
+  font-size: 0.85rem;
+  color: #475569;
 }
 
 .boutons-niveaux button:hover {
-  background: #f3f4f6;
+  border-color: #94a3b8;
 }
 
 .boutons-niveaux button.actif {
-  background: #6366f1;
+  background: #334155;
   color: white;
-  border-color: #6366f1;
-}
-
-.zone-switch {
-  min-height: 80px;
+  border-color: #334155;
 }
 
 .message-switch {
-  padding: 1.2rem;
-  border-radius: 10px;
-  font-weight: 500;
-  border-left: 4px solid;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  color: #334155;
 }
 
-.message-debutant { background: #f0fdf4; color: #166534; border-color: #22c55e; }
-.message-intermediaire { background: #eff6ff; color: #1e3a8a; border-color: #3b82f6; }
-.message-expert { background: #fdf2f8; color: #831843; border-color: #ec4899; }
-.message-defaut { background: #f3f4f6; color: #4b5563; border-color: #9ca3af; }
+.message-debutant, .message-intermediaire, .message-expert, .message-defaut {
+  border-left: 3px solid #64748b;
+}
 
-/* Styles ngStyle */
+/* Style ngStyle */
 .controleur-style {
-  background: #f9fafb;
-  padding: 1.5rem;
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
-}
-
-.controleur-style label {
-  display: block;
-  margin-bottom: 1rem;
-  color: #374151;
-}
-
-.slider {
-  width: 100%;
-  margin-bottom: 1.5rem;
+  background: #f8fafc;
+  padding: 1.25rem;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
 }
 
 .barre-conteneur {
   width: 100%;
-  height: 20px;
-  background-color: #e5e7eb;
-  border-radius: 10px;
+  height: 12px;
+  background-color: #e2e8f0;
+  border-radius: 6px;
   overflow: hidden;
+  margin-top: 1rem;
 }
 
 .barre-remplissage {
   height: 100%;
   transition: width 0.3s ease, background-color 0.3s ease;
-  border-radius: 10px;
+  border-radius: 6px;
 }
