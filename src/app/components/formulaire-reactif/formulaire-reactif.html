@@ -1,0 +1,60 @@
+<div class="gestion-container">
+  <div class="form-card">
+    <h2>Inscription (Reactive Form)</h2>
+    <p class="subtitle">FormGroup / FormBuilder (Chapitre 6)</p>
+
+    <form [formGroup]="formulaire" class="modern-form">
+      
+      <!-- NOM UTILISATEUR -->
+      <div class="form-group">
+        <label>Nom d'utilisateur</label>
+        <input type="text" formControlName="nomUtilisateur" placeholder="Min. 3 caractères">
+        <div class="error" *ngIf="formulaire.get('nomUtilisateur')?.invalid && formulaire.get('nomUtilisateur')?.touched">
+          <span *ngIf="formulaire.get('nomUtilisateur')?.errors?.['required']">Le nom d'utilisateur est requis.</span>
+          <span *ngIf="formulaire.get('nomUtilisateur')?.errors?.['minlength']">Minimum 3 caractères requis.</span>
+        </div>
+      </div>
+
+      <!-- EMAIL -->
+      <div class="form-group">
+        <label>Adresse Mail</label>
+        <input type="email" formControlName="email" placeholder="exemple@mail.com">
+        <div class="error" *ngIf="formulaire.get('email')?.invalid && formulaire.get('email')?.touched">
+          <span *ngIf="formulaire.get('email')?.errors?.['required']">L'email est requis.</span>
+          <span *ngIf="formulaire.get('email')?.errors?.['email']">Format email invalide.</span>
+        </div>
+      </div>
+
+      <!-- MOT DE PASSE -->
+      <div class="form-group">
+        <label>Mot de passe</label>
+        <input type="password" formControlName="motDePasse" placeholder="Min. 6 caractères">
+        <div class="error" *ngIf="formulaire.get('motDePasse')?.invalid && formulaire.get('motDePasse')?.touched">
+          <span *ngIf="formulaire.get('motDePasse')?.errors?.['required']">Le mot de passe est requis.</span>
+          <span *ngIf="formulaire.get('motDePasse')?.errors?.['minlength']">Minimum 6 caractères requis.</span>
+        </div>
+      </div>
+
+      <!-- BOUTONS -->
+      <div class="actions">
+        <button type="button" 
+                class="btn btn-save" 
+                (click)="sauvegarder()" 
+                [disabled]="formulaire.invalid">
+          Sauvegarder
+        </button>
+        <button type="button" 
+                class="btn btn-cancel" 
+                (click)="annuler()">
+          Annuler
+        </button>
+        <button type="button" 
+                class="btn btn-list" 
+                (click)="lister()">
+          Lister
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>

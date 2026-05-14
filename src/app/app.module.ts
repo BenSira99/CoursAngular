@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,7 +19,10 @@ import { CompterCaracterePipe } from './pipes/compter-caractere.pipe';
 import { InverserChainePipe } from './pipes/inverser-chaine.pipe';
 import { SommeChiffresPipe } from './pipes/somme-chiffres.pipe';
 import { EtudiantsComponent } from './components/etudiants/etudiants';
+import { ListeEtudiantsComponent } from './components/liste-etudiants/liste-etudiants';
+import { FormulaireReactifComponent } from './components/formulaire-reactif/formulaire-reactif';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MeteoComponent } from './meteo/meteo.component';
 
 @NgModule({
   declarations: [
@@ -32,15 +36,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     CompterCaracterePipe,
     InverserChainePipe,
     SommeChiffresPipe,
-    EtudiantsComponent
+    EtudiantsComponent,
+    ListeEtudiantsComponent,
+    FormulaireReactifComponent,
+    MeteoComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

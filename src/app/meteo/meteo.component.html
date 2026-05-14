@@ -1,0 +1,85 @@
+<div class="meteo-container">
+  <div class="background-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+
+  <div class="search-section">
+    <p class="subtitle">Discover the weather</p>
+    <h1 class="title">Weather Forecast</h1>
+
+    <div class="search-box">
+      <input
+        #cityInput
+        type="text"
+        class="search-input"
+        placeholder="Enter city name..."
+        [(ngModel)]="city"
+        (keyup.enter)="searchWeather(cityInput.value)"
+      />
+      <button class="search-btn" (click)="searchWeather(cityInput.value)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="error" class="error-message">
+    <span>{{ error }}</span>
+  </div>
+
+  <div *ngIf="weather" class="weather-card">
+    <div class="weather-header">
+      <div class="location">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+        <span>{{ weather.name }}, {{ weather.weather[0].description | titlecase }}</span>
+      </div>
+      <div class="date">{{ today | date: 'EEEE, MMMM d, y' }}</div>
+    </div>
+
+    <div class="weather-main">
+      <div class="temperature">
+        <span class="temp-value">{{ weather.main.temp | number: '1.0-0' }}</span>
+        <span class="temp-unit">°C</span>
+      </div>
+      <div class="weather-icon">
+        <img
+          [src]="'https://openweathermap.org/img/wn/' + weather.weather[0].icon + '@4x.png'"
+          [alt]="weather.weather[0].description"
+        />
+      </div>
+    </div>
+
+    <div class="weather-details">
+      <div class="detail-card">
+        <div class="detail-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+          </svg>
+        </div>
+        <div class="detail-info">
+          <span class="detail-label">Pressure</span>
+          <span class="detail-value">{{ weather.main.pressure }} <small>hPa</small></span>
+        </div>
+      </div>
+
+      <div class="detail-card">
+        <div class="detail-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+          </svg>
+        </div>
+        <div class="detail-info">
+          <span class="detail-label">Humidity</span>
+          <span class="detail-value">{{ weather.main.humidity }} <small>%</small></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

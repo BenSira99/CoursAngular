@@ -1,55 +1,75 @@
-<div class="conteneur">
-  <h2 class="titre">Gestion des Étudiants (Formulaires)</h2>
+<div class="gestion-container">
+  <div class="form-card">
+    <h2>Inscription Simplifiée</h2>
+    <p class="subtitle">Template Driven Form (Chapitre 6)</p>
 
-  <div class="formulaire-section">
-    <form [formGroup]="etudiantsForm" (ngSubmit)="ajouterEtudiant()" class="formulaire">
+    <form #formUser="ngForm" class="modern-form">
       
-      <div class="groupe-champ">
-        <label for="nom">Nom :</label>
-        <input id="nom" type="text" formControlName="nom" class="champ-saisie">
-        <div *ngIf="etudiantsForm.get('nom')?.invalid && etudiantsForm.get('nom')?.touched" class="erreur">
-          Le nom est requis (minimum 2 caractères).
+      <!-- NOM UTILISATEUR -->
+      <div class="form-group">
+        <label>Nom d'utilisateur</label>
+        <input type="text" 
+               name="username" 
+               [(ngModel)]="utilisateur.nomUtilisateur" 
+               #username="ngModel" 
+               required 
+               minlength="3" 
+               placeholder="Entrez votre pseudo">
+        <div class="error" *ngIf="username.invalid && username.touched">
+          Le nom d'utilisateur est requis (min. 3 caractères).
         </div>
       </div>
 
-      <div class="groupe-champ">
-        <label for="prenom">Prénom :</label>
-        <input id="prenom" type="text" formControlName="prenom" class="champ-saisie">
-        <div *ngIf="etudiantsForm.get('prenom')?.invalid && etudiantsForm.get('prenom')?.touched" class="erreur">
-          Le prénom est requis.
+      <!-- EMAIL -->
+      <div class="form-group">
+        <label>Adresse Mail</label>
+        <input type="email" 
+               name="email" 
+               [(ngModel)]="utilisateur.email" 
+               #emailRef="ngModel" 
+               required 
+               email 
+               placeholder="exemple@mail.com">
+        <div class="error" *ngIf="emailRef.invalid && emailRef.touched">
+          Un email valide est requis.
         </div>
       </div>
 
-      <div class="groupe-champ">
-        <label for="filiere">Filière :</label>
-        <select id="filiere" formControlName="filiere" class="champ-selection">
-          <option value="Informatique">Informatique</option>
-          <option value="Mathématiques">Mathématiques</option>
-          <option value="Physique">Physique</option>
-        </select>
+      <!-- MOT DE PASSE -->
+      <div class="form-group">
+        <label>Mot de passe</label>
+        <input type="password" 
+               name="password" 
+               [(ngModel)]="utilisateur.motDePasse" 
+               #password="ngModel" 
+               required 
+               minlength="6" 
+               placeholder="6 caractères minimum">
+        <div class="error" *ngIf="password.invalid && password.touched">
+          Le mot de passe est requis (min. 6 caractères).
+        </div>
       </div>
 
-      <button type="submit" [disabled]="etudiantsForm.invalid" class="bouton-ajouter">
-        Ajouter l'étudiant
-      </button>
+      <!-- BOUTONS -->
+      <div class="actions">
+        <button type="button" 
+                class="btn btn-save" 
+                (click)="sauvegarder()" 
+                [disabled]="formUser.invalid">
+          Sauvegarder
+        </button>
+        <button type="button" 
+                class="btn btn-cancel" 
+                (click)="annuler()">
+          Annuler
+        </button>
+        <button type="button" 
+                class="btn btn-list" 
+                (click)="lister()">
+          Lister
+        </button>
+      </div>
 
     </form>
-  </div>
-
-  <div class="liste-section">
-    <h3>Liste des Étudiants ({{ etudiants.length }})</h3>
-    <div *ngIf="etudiants.length === 0" class="message-vide">
-      Aucun étudiant n'a été ajouté.
-    </div>
-
-    <ul class="liste-etudiants" *ngIf="etudiants.length > 0">
-      <li *ngFor="let etudiant of etudiants" class="etudiant-item">
-        <div class="etudiant-infos">
-          <strong>{{ etudiant.nom | uppercase }} {{ etudiant.prenom }}</strong>
-          <span class="badge-filiere">{{ etudiant.filiere }}</span>
-        </div>
-        <button (click)="supprimerEtudiant(etudiant.id)" class="bouton-supprimer">Supprimer</button>
-      </li>
-    </ul>
   </div>
 </div>

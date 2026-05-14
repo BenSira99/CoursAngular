@@ -1,12 +1,7 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
-export interface Etudiant {
-  id: number;
-  nom: string;
-  prenom: string;
-  filiere: string;
-}
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { EtudiantService } from '../../services/etudiant.service';
+import { Etudiant } from '../../models/etudiant.model';
 
 @Component({
   selector: 'app-etudiants',
@@ -15,34 +10,40 @@ export interface Etudiant {
   styleUrl: './etudiants.css'
 })
 export class EtudiantsComponent {
-  etudiantsForm: FormGroup;
-  etudiants: Etudiant[] = [];
-  prochainIde = 1;
+  private router = inject(Router);
+  private etudiantService = inject(EtudiantService);
 
-  constructor(private fb: FormBuilder) {
-    this.etudiantsForm = this.fb.group({
-      nom: ['', [Validators.required, Validators.minLength(2)]],
-      prenom: ['', [Validators.required]],
-      filiere: ['Informatique', [Validators.required]]
-    });
+  // Objet lié au modèle
+  utilisateur: Etudiant = {
+    nomUtilisateur: '',
+    email: '',
+    motDePasse: ''
+  };
+
+  /**
+   * Bouton SAUVEGARDER
+   */
+  sauvegarder() {
+    this.etudiantService.ajouterEtudiant({ ...this.utilisateur });
+    alert('Utilisateur enregistré dans le service !');
+    this.annuler();
   }
 
-  ajouterEtudiant() {
-    if (this.etudiantsForm.valid) {
-      const formValue = this.etudiantsForm.value;
-      const nouvelEtudiant: Etudiant = {
-        id: this.prochainIde++,
-        nom: formValue.nom,
-        prenom: formValue.prenom,
-        filiere: formValue.filiere
-      };
-      
-      this.etudiants.push(nouvelEtudiant);
-      this.etudiantsForm.reset({ filiere: 'Informatique' });
-    }
+  /**
+   * Bouton ANNULER
+   */
+  annuler() {
+    this.utilisateur = {
+      nomUtilisateur: '',
+      email: '',
+      motDePasse: ''
+    };
   }
 
-  supprimerEtudiant(id: number) {
-    this.etudiants = this.etudiants.filter(e => e.id !== id);
+  /**
+   * Bouton LISTER
+   */
+  lister() {
+    this.router.navigate(['liste-etudiants']);
   }
 }
