@@ -11,6 +11,7 @@ import { PipesDemo } from './components/pipes-demo/pipes-demo';
 import { EtudiantsComponent } from './components/etudiants/etudiants';
 import { ListeEtudiantsComponent } from './components/liste-etudiants/liste-etudiants';
 import { FormulaireReactifComponent } from './components/formulaire-reactif/formulaire-reactif';
+import { GestionDesEtudiantsComponent } from './components/gestion-des-etudiants/gestion-des-etudiants';
 import { MeteoComponent } from './meteo/meteo.component';
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'tp3', component: Jeu },
   { path: 'tp4', component: PipesDemo },
   { path: 'tp5', component: EtudiantsComponent },
+  { path: 'gestion-etudiants', component: GestionDesEtudiantsComponent },
   { path: 'tp6', component: FormulaireReactifComponent },
   { path: 'liste-etudiants', component: ListeEtudiantsComponent },
   { path: 'meteo', component: MeteoComponent },

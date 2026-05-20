@@ -4,6 +4,9 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
+    "rootDir": "./src",
+    "module": "ES2020",
+    "forceConsistentCasingInFileNames": true,
     "types": []
   },
   "include": ["src/**/*.ts"],

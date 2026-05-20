@@ -43,6 +43,6 @@ export class FormulaireReactifComponent {
    * Bouton LISTER : navigation programmatique
    */
   lister() {
-    this.router.navigate(['liste-etudiants']);
+    this.router.navigate(['liste-etudiants'], { queryParams: { retour: 'tp6' } });
   }
 }

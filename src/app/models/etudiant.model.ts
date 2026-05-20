@@ -4,6 +4,9 @@
  */
 export interface Etudiant {
   nomUtilisateur: string;
+  prenom?: string;
+  dateNaissance?: string;
   email: string;
-  motDePasse: string;
+  telephone?: string;
+  motDePasse?: string;
 }

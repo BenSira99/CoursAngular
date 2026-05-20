@@ -44,6 +44,6 @@ export class EtudiantsComponent {
    * Bouton LISTER
    */
   lister() {
-    this.router.navigate(['liste-etudiants']);
+    this.router.navigate(['liste-etudiants'], { queryParams: { retour: 'tp5' } });
   }
 }

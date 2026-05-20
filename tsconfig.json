@@ -12,8 +12,9 @@
     "isolatedModules": true,
     "experimentalDecorators": true,
     "importHelpers": true,
+    "forceConsistentCasingInFileNames": true,
     "target": "ES2022",
-    "module": "preserve"
+    "module": "ES2020"
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

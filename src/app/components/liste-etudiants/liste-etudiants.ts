@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EtudiantService } from '../../services/etudiant.service';
 import { Etudiant } from '../../models/etudiant.model';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-liste-etudiants',
@@ -9,19 +9,25 @@ import { Router } from '@angular/router';
   template: `
     <div class="liste-container">
       <h2>Liste des Étudiants Sauvegardés</h2>
-      
+
       <div class="table-responsive" *ngIf="etudiants.length > 0; else vide">
         <table class="etudiant-table">
           <thead>
             <tr>
-              <th>Nom d'utilisateur</th>
+              <th>Nom</th>
+              <th>Prénom</th>
+              <th>Date de naissance</th>
               <th>Email</th>
+              <th>Téléphone</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let e of etudiants">
               <td>{{ e.nomUtilisateur }}</td>
+              <td>{{ e.prenom || '-' }}</td>
+              <td>{{ e.dateNaissance || '-' }}</td>
               <td>{{ e.email }}</td>
+              <td>{{ e.telephone || '-' }}</td>
             </tr>
           </tbody>
         </table>
@@ -31,7 +37,7 @@ import { Router } from '@angular/router';
         <p class="message-vide">Aucun étudiant enregistré pour le moment.</p>
       </ng-template>
 
-      <button (click)="retour()" class="btn-retour">Retour au Formulaire</button>
+      <button (click)="retour()" class="btn-retour">Retour</button>
     </div>
   `,
   styles: [`
@@ -47,14 +53,20 @@ import { Router } from '@angular/router';
 export class ListeEtudiantsComponent implements OnInit {
   private etudiantService = inject(EtudiantService);
   private router = inject(Router);
-  
+  private route = inject(ActivatedRoute);
+
   etudiants: Etudiant[] = [];
+  retourRoute = 'tp5';
 
   ngOnInit(): void {
     this.etudiants = this.etudiantService.obtenirEtudiants();
+    const retourParam = this.route.snapshot.queryParamMap.get('retour');
+    if (retourParam) {
+      this.retourRoute = retourParam;
+    }
   }
 
   retour(): void {
-    this.router.navigate(['tp5']);
+    this.router.navigate([this.retourRoute]);
   }
 }

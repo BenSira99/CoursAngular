@@ -21,6 +21,7 @@ import { SommeChiffresPipe } from './pipes/somme-chiffres.pipe';
 import { EtudiantsComponent } from './components/etudiants/etudiants';
 import { ListeEtudiantsComponent } from './components/liste-etudiants/liste-etudiants';
 import { FormulaireReactifComponent } from './components/formulaire-reactif/formulaire-reactif';
+import { GestionDesEtudiantsComponent } from './components/gestion-des-etudiants/gestion-des-etudiants';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MeteoComponent } from './meteo/meteo.component';
 
@@ -39,6 +40,7 @@ import { MeteoComponent } from './meteo/meteo.component';
     EtudiantsComponent,
     ListeEtudiantsComponent,
     FormulaireReactifComponent,
+    GestionDesEtudiantsComponent,
     MeteoComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule],
