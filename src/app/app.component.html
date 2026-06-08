@@ -1,32 +1,67 @@
-<div class="app-container">
-  <!-- BARRE DE NAVIGATION (Boutons avec Router.navigate) -->
-  <header class="navbar">
-    <div class="logo">
-      <h1>{{ titre }}</h1>
+<div class="supabase-layout">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo-box">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="supabase-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+      </div>
+      <h2>{{ titre }}</h2>
     </div>
 
-    <nav class="nav-buttons">
-      <button (click)="naviguer('tp1')" class="nav-btn">TP 1 : Bonjour</button>
-      <button (click)="naviguer('interpolation')" class="nav-btn">Interpolation</button>
-      <button (click)="naviguer('tp2')" class="nav-btn">TP 2 : Calculatrice</button>
-      <button (click)="naviguer('directives')" class="nav-btn">Directives</button>
-      <button (click)="naviguer('tp3')" class="nav-btn">TP 3 : Jeu</button>
-      <button (click)="naviguer('tp4')" class="nav-btn">TP 4 : Pipes</button>
-      <button (click)="naviguer('tp5')" class="nav-btn">TP 5 : Formulaire</button>
-      <button (click)="naviguer('gestion-etudiants')" class="nav-btn">Gestion des étudiants</button>
-      <button (click)="naviguer('tp6')" class="nav-btn">TP 6 : Reactive Form</button>
-      <button (click)="naviguer('meteo')" class="nav-btn meteo-btn">Météo</button>
-    </nav>
-  </header>
+    <nav class="sidebar-nav">
+      <p class="nav-section">Projets</p>
+      
+      <button (click)="naviguer('tp1')" class="nav-item">
+        <span class="icon">👋</span> Bonjour
+      </button>
+      <button (click)="naviguer('tp2')" class="nav-item">
+        <span class="icon">🧮</span> Calculatrice
+      </button>
+      <button (click)="naviguer('interpolation')" class="nav-item">
+        <span class="icon">✨</span> Interpolation
+      </button>
+      <button (click)="naviguer('directives')" class="nav-item">
+        <span class="icon">🚦</span> Directives
+      </button>
+      <button (click)="naviguer('tp3')" class="nav-item">
+        <span class="icon">🎲</span> Jeu
+      </button>
+      <button (click)="naviguer('tp4')" class="nav-item">
+        <span class="icon">🚰</span> Pipes
+      </button>
+      <button (click)="naviguer('tp5')" class="nav-item">
+        <span class="icon">📝</span> Formulaire
+      </button>
+      <button (click)="naviguer('gestion-etudiants')" class="nav-item">
+        <span class="icon">🎓</span> Étudiants
+      </button>
+      <button (click)="naviguer('tp6')" class="nav-item">
+        <span class="icon">⚡</span> Reactive Form
+      </button>
 
-  <!-- CONTENU DYNAMIQUE -->
-  <main class="content-area">
-    <div class="page-fade">
-      <router-outlet></router-outlet>
+      <p class="nav-section mt-auto">Services Externes</p>
+      <button (click)="naviguer('meteo')" class="nav-item btn-primary">
+        <span class="icon">🌤️</span> Météo
+      </button>
+    </nav>
+
+    
+  </aside>
+
+  <!-- CONTENT AREA -->
+  <main class="main-content">
+    <header class="topbar">
+      <div class="breadcrumb">
+        <span>TPAngular</span> <span class="separator">/</span> <span class="current">Dashboard</span>
+      </div>
+    </header>
+    
+    <div class="content-scroll">
+      <div class="page-container">
+        <div class="page-fade">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
     </div>
   </main>
-
-  <footer class="footer">
-    <p>© 2026 — BenSira99 • Formation Angular Avancée</p>
-  </footer>
 </div>

@@ -2,14 +2,14 @@
   max-width: 680px;
   margin: 2rem auto;
   padding: 2rem;
-  background: #ffffff;
+  background: var(--sb-card)fff;
   border-radius: 14px;
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  box-shadow: var(--sb-shadow);
 }
 
 .gestion-container h2 {
   margin-bottom: 1.5rem;
-  color: #1d4ed8;
+  color: var(--sb-text);
 }
 
 .form-field {
@@ -25,13 +25,13 @@
 
 .form-field input {
   padding: 0.75rem 0.9rem;
-  border: 1px solid #cbd5e1;
+  border: 1px solid var(--sb-border);
   border-radius: 8px;
   font-size: 1rem;
 }
 
 .form-field small {
-  color: #475569;
+  color: var(--sb-text);
 }
 
 .button-row {
@@ -46,9 +46,17 @@
   border-radius: 8px;
   padding: 0.8rem 1.2rem;
   cursor: pointer;
-  color: #ffffff;
+  color: var(--sb-text);
 }
 
-.btn-save { background: #10b981; }
-.btn-cancel { background: #ef4444; }
-.btn-list { background: #3b82f6; }
+.btn-save { background: var(--sb-card); }
+.btn-cancel { background: var(--sb-card); }
+.btn-list { background: var(--sb-green); }
+
+
+/* Supabase forced accents */
+h1, h2, h3, .titre-interne, .highlight { color: var(--sb-green) !important; }
+.info-bulle { border-left: 4px solid var(--sb-green) !important; }
+button.rouge, button.operateur, button.egal { background: var(--sb-green) !important; color: #fff !important; border-color: var(--sb-green) !important; }
+button.rouge:hover, button.operateur:hover, button.egal:hover { background: var(--sb-green-hover) !important; }
+.badge { border: 1px solid var(--sb-green) !important; color: var(--sb-green) !important; background: rgba(36, 180, 126, 0.1) !important; }

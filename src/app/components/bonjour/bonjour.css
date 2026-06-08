@@ -1,12 +1,12 @@
 .message-bonjour {
-  background: rgba(240, 249, 255, 0.8);
+  background: var(--sb-card);
   backdrop-filter: blur(10px);
-  border: 1px solid #0ea5e9;
+  border: 1px solid var(--sb-border);
   padding: 2rem;
   border-radius: 20px;
   margin-bottom: 2rem;
-  color: #0369a1;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  color: var(--sb-text);
+  box-shadow: var(--sb-shadow);
   transition: transform 0.3s ease;
 }
 
@@ -17,7 +17,7 @@
 h1 { 
   margin: 0; 
   font-size: 2.2rem; 
-  color: #0284c7;
+  color: var(--sb-text);
   text-align: center;
   font-weight: 800;
 }
@@ -26,21 +26,21 @@ p {
   text-align: center;
   margin-top: 0.8rem; 
   font-style: italic;
-  color: #075985;
+  color: var(--sb-text);
 }
 
 .donnees {
   margin-top: 2rem;
-  background: white;
+  background: var(--sb-card);
   padding: 1.5rem;
   border-radius: 16px;
-  border: 1px solid #e0f2fe;
+  border: 1px solid var(--sb-border);
 }
 
 .donnees h3 {
-  color: #0284c7;
+  color: var(--sb-text);
   margin-bottom: 1rem;
-  border-bottom: 2px solid #e0f2fe;
+  border-bottom: 1px solid var(--sb-border);
   padding-bottom: 0.5rem;
 }
 
@@ -52,9 +52,9 @@ ul {
 
 li {
   padding: 0.75rem 0;
-  border-bottom: 1px solid #f0f9ff;
+  border-bottom: 1px solid var(--sb-border);
   font-size: 1.1rem;
-  color: #334155;
+  color: var(--sb-text);
 }
 
 li:last-child {
@@ -62,7 +62,15 @@ li:last-child {
 }
 
 strong {
-  color: #0369a1;
+  color: var(--sb-text);
   display: inline-block;
   width: 200px;
 }
+
+
+/* Supabase forced accents */
+h1, h2, h3, .titre-interne, .highlight { color: var(--sb-green) !important; }
+.info-bulle { border-left: 4px solid var(--sb-green) !important; }
+button.rouge, button.operateur, button.egal { background: var(--sb-green) !important; color: #fff !important; border-color: var(--sb-green) !important; }
+button.rouge:hover, button.operateur:hover, button.egal:hover { background: var(--sb-green-hover) !important; }
+.badge { border: 1px solid var(--sb-green) !important; color: var(--sb-green) !important; background: rgba(36, 180, 126, 0.1) !important; }

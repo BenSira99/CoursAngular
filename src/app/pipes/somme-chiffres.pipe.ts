@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 /**
  * Pipe pour calculer la somme des chiffres d'un nombre.
- * @author BenSira99
+ * @author fatima
  */
 @Pipe({
   name: 'sommeChiffres',

@@ -8,10 +8,10 @@
   max-width: 450px;
   margin: 2rem auto;
   padding: 2.5rem;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
+  background: var(--sb-card)fff;
+  border: 1px solid var(--sb-border);
   border-radius: 24px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--sb-shadow);
   text-align: center;
   box-sizing: border-box;
   animation: apparition 0.6s cubic-bezier(0.16, 1, 0.3, 1);
@@ -23,10 +23,10 @@
 }
 
 h2 {
-  color: #fff;
+  color: var(--sb-text);
   font-size: 2rem;
   margin-bottom: 2rem;
-  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  background: var(--sb-green);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -34,25 +34,25 @@ h2 {
 }
 
 .carte-status {
-  background: #f3f4f6;
+  background: var(--sb-card);
   padding: 1rem;
   border-radius: 16px;
   margin-bottom: 2rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--sb-border);
 }
 
 .label {
-  color: #6b7280;
+  color: var(--sb-muted);
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .valeur {
-  color: #1f2937;
+  color: var(--sb-text);
   font-size: 1.5rem;
   font-weight: 700;
   display: block;
@@ -66,10 +66,10 @@ h2 {
 input {
   width: 100%;
   padding: 1rem;
-  background: #f8fafc;
-  border: 2px solid #e2e8f0;
+  background: var(--sb-card);
+  border: 2px solid var(--sb-border);
   border-radius: 12px;
-  color: #1e293b;
+  color: var(--sb-text);
   font-size: 1.4rem;
   outline: none;
   transition: all 0.3s ease;
@@ -78,9 +78,9 @@ input {
 }
 
 input:focus {
-  border-color: #6366f1;
-  background: rgba(99, 102, 241, 0.1);
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+  border-color: var(--sb-text);
+  background: var(--sb-card);
+  box-shadow: var(--sb-shadow);
 }
 
 .bouton-valider {
@@ -88,18 +88,18 @@ input:focus {
   padding: 1rem;
   border: none;
   border-radius: 12px;
-  background: linear-gradient(135deg, #6366f1 0%, #4338ca 100%);
-  color: #fff;
+  background: var(--sb-green);
+  color: var(--sb-text);
   font-weight: 600;
   font-size: 1.1rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
+  box-shadow: var(--sb-shadow);
 }
 
 .bouton-valider:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.4);
+  box-shadow: var(--sb-shadow);
 }
 
 .bouton-valider:disabled {
@@ -126,28 +126,28 @@ input:focus {
 }
 
 .gagne {
-  background: #f0fdf4;
-  border: 1px solid #bbf7d0;
-  color: #16a34a;
+  background: var(--sb-card);
+  border: 1px solid var(--sb-border);
+  color: var(--sb-text);
 }
 
 .info {
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  color: #475569;
+  background: var(--sb-card);
+  border: 1px solid var(--sb-border);
+  color: var(--sb-text);
 }
 
 .perdu {
-  background: #fef2f2;
-  border: 1px solid #fecaca;
-  color: #dc2626;
+  background: var(--sb-card);
+  border: 1px solid var(--sb-border);
+  color: var(--sb-text);
 }
 
 .bouton-rejouer {
   margin-top: 1.5rem;
-  background: #f1f5f9;
-  color: #334155;
-  border: 1px solid #cbd5e1;
+  background: var(--sb-card);
+  color: var(--sb-text);
+  border: 1px solid var(--sb-border);
   padding: 0.8rem 1.5rem;
   border-radius: 12px;
   cursor: pointer;
@@ -156,6 +156,14 @@ input:focus {
 }
 
 .bouton-rejouer:hover {
-  background: #e2e8f0;
-  border-color: #94a3b8;
+  background: var(--sb-hover);
+  border-color: var(--sb-text);
 }
+
+
+/* Supabase forced accents */
+h1, h2, h3, .titre-interne, .highlight { color: var(--sb-green) !important; }
+.info-bulle { border-left: 4px solid var(--sb-green) !important; }
+button.rouge, button.operateur, button.egal { background: var(--sb-green) !important; color: #fff !important; border-color: var(--sb-green) !important; }
+button.rouge:hover, button.operateur:hover, button.egal:hover { background: var(--sb-green-hover) !important; }
+.badge { border: 1px solid var(--sb-green) !important; color: var(--sb-green) !important; background: rgba(36, 180, 126, 0.1) !important; }

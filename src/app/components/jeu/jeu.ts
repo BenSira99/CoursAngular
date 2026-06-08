@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './jeu.css',
 })
 export class Jeu {
-  // Logique métier en français selon les règles Ben Sira
+  // Logique métier en français selon les règles 
   protected nombreSecret: number = Math.floor(Math.random() * 100) + 1;
   protected nombreSaisi: number | null = null;
   protected message: string = '';

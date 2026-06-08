@@ -31,16 +31,25 @@ export class MeteoComponent {
     this.weather = null;
 
     this.meteoService.getWeather(name).subscribe({
-      next: (data) => {
+      next: (data: WeatherData) => {
         this.weather = data;
         this.error = '';
         this.cdr.detectChanges();
       },
-      error: (err) => {
+      error: (err: any) => {
         this.error = 'Ville non trouvée. Vérifiez le nom.';
         this.weather = null;
         this.cdr.detectChanges();
       },
     });
+  }
+
+  getCountryName(code: string): string {
+    if (!code) return '';
+    try {
+      return new Intl.DisplayNames(['fr'], { type: 'region' }).of(code) || code;
+    } catch (e) {
+      return code;
+    }
   }
 }

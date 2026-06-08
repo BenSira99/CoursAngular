@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 /**
  * Pipe pour compter les occurrences d'un caractère dans une chaîne.
- * @author BenSira99
+ * @author fatima
  */
 @Pipe({
   name: 'compterCaractere',

@@ -12,7 +12,7 @@ import { SommeChiffresPipe } from '../../pipes/somme-chiffres.pipe';
   styleUrl: './pipes-demo.css'
 })
 export class PipesDemo {
-  // Variables en français selon les règles de Ben Sira
+  // Variables en français selon les règles
   protected textePourCompter: string = 'banane';
   protected caractereRecherche: string = 'a';
   

@@ -67,4 +67,4 @@ TPAngular/
 
 Ce projet est sous licence MIT.
 
-## 👤 Auteur — BenSira99
+## 👤 Auteur

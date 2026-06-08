@@ -8,7 +8,7 @@
 
 .meteo-container {
   min-height: calc(100vh - 150px);
-  background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+  background: #000000;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,7 +37,7 @@
 .shape-1 {
   width: 400px;
   height: 400px;
-  background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
+  background: rgba(36, 180, 126, 0.05);
   top: -100px;
   right: -100px;
   animation: floatShape 15s ease-in-out infinite;
@@ -46,7 +46,7 @@
 .shape-2 {
   width: 300px;
   height: 300px;
-  background: linear-gradient(135deg, #f472b6 0%, #fb923c 100%);
+  background: rgba(36, 180, 126, 0.05);
   bottom: -50px;
   left: -50px;
   animation: floatShape 12s ease-in-out infinite reverse;
@@ -55,7 +55,7 @@
 .shape-3 {
   width: 200px;
   height: 200px;
-  background: linear-gradient(135deg, #34d399 0%, #22d3ee 100%);
+  background: rgba(36, 180, 126, 0.05);
   top: 50%;
   left: 10%;
   animation: floatShape 10s ease-in-out infinite;
@@ -82,7 +82,7 @@
 }
 
 .subtitle {
-  color: #64748b;
+  color: var(--sb-text);
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 4px;
@@ -94,7 +94,7 @@
   font-size: 3.5rem;
   font-weight: 700;
   margin: 0 0 2rem 0;
-  background: linear-gradient(135deg, #4338ca 0%, #7c3aed 50%, #db2777 100%);
+  background: var(--sb-green);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -103,24 +103,24 @@
 .search-box {
   display: flex;
   align-items: center;
-  background: #fff;
+  background: var(--sb-card);
   border-radius: 50px;
   padding: 0.5rem;
-  box-shadow: 0 10px 40px -10px rgba(99, 102, 241, 0.3);
+  box-shadow: var(--sb-shadow);
   transition: all 0.3s ease;
   border: 2px solid transparent;
 }
 
 .search-box:focus-within {
-  border-color: #818cf8;
-  box-shadow: 0 10px 40px -10px rgba(99, 102, 241, 0.5);
+  border-color: var(--sb-text);
+  box-shadow: var(--sb-shadow);
 }
 
 .search-input {
   background: transparent;
   border: none;
   outline: none;
-  color: #1e293b;
+  color: var(--sb-text);
   font-size: 1rem;
   padding: 0.75rem 1.5rem;
   width: 300px;
@@ -128,11 +128,11 @@
 }
 
 .search-input::placeholder {
-  color: #94a3b8;
+  color: var(--sb-text);
 }
 
 .search-btn {
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  background: var(--sb-green);
   border: none;
   border-radius: 50%;
   width: 48px;
@@ -146,19 +146,19 @@
 
 .search-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 30px -5px rgba(99, 102, 241, 0.5);
+  box-shadow: var(--sb-shadow);
 }
 
 .search-btn svg {
   width: 20px;
   height: 20px;
-  color: #fff;
+  color: var(--sb-text);
 }
 
 .error-message {
-  background: #fef2f2;
-  border: 1px solid #fecaca;
-  color: #dc2626;
+  background: var(--sb-card);
+  border: 1px solid var(--sb-border);
+  color: var(--sb-text);
   padding: 1rem 2rem;
   border-radius: 12px;
   margin-bottom: 2rem;
@@ -166,15 +166,15 @@
 }
 
 .weather-card {
-  background: #fff;
+  background: var(--sb-card);
   border-radius: 24px;
   padding: 2.5rem;
-  box-shadow: 0 25px 50px -12px rgba(99, 102, 241, 0.15);
+  box-shadow: var(--sb-shadow);
   min-width: 400px;
   position: relative;
   z-index: 1;
   animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid rgba(99, 102, 241, 0.1);
+  border: 1px solid var(--sb-border);
 }
 
 @keyframes slideUp {
@@ -194,14 +194,14 @@
   align-items: center;
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
-  border-bottom: 2px solid #f1f5f9;
+  border-bottom: 1px solid var(--sb-border);
 }
 
 .location {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #1e293b;
+  color: var(--sb-text);
   font-weight: 600;
   font-size: 1.1rem;
 }
@@ -209,11 +209,11 @@
 .location svg {
   width: 20px;
   height: 20px;
-  color: #6366f1;
+  color: var(--sb-text);
 }
 
 .date {
-  color: #64748b;
+  color: var(--sb-text);
   font-size: 0.875rem;
 }
 
@@ -232,14 +232,14 @@
 .temp-value {
   font-size: 5rem;
   font-weight: 700;
-  color: #4338ca;
+  color: var(--sb-text);
   line-height: 1;
 }
 
 .temp-unit {
   font-size: 2rem;
   font-weight: 300;
-  color: #64748b;
+  color: var(--sb-text);
   margin-top: 0.5rem;
 }
 
@@ -247,7 +247,7 @@
   width: 140px;
   height: 140px;
   animation: float 3s ease-in-out infinite;
-  background: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 100%);
+  background: transparent;
   border-radius: 50%;
   padding: 10px;
 }
@@ -269,25 +269,25 @@
 }
 
 .detail-card {
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  background: var(--sb-bg);
   border-radius: 16px;
   padding: 1.25rem;
   display: flex;
   align-items: center;
   gap: 1rem;
   transition: all 0.3s ease;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--sb-border);
 }
 
 .detail-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.2);
+  box-shadow: var(--sb-shadow);
 }
 
 .detail-icon {
   width: 48px;
   height: 48px;
-  background: linear-gradient(135deg, #e0e7ff 0%, #ddd6fe 100%);
+  background: rgba(36, 180, 126, 0.1);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -297,7 +297,7 @@
 .detail-icon svg {
   width: 24px;
   height: 24px;
-  color: #6366f1;
+  color: var(--sb-text);
 }
 
 .detail-info {
@@ -306,7 +306,7 @@
 }
 
 .detail-label {
-  color: #64748b;
+  color: var(--sb-text);
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -314,13 +314,13 @@
 }
 
 .detail-value {
-  color: #4338ca;
+  color: var(--sb-text);
   font-size: 1.25rem;
   font-weight: 700;
 }
 
 .detail-value small {
-  color: #64748b;
+  color: var(--sb-text);
   font-weight: 400;
   font-size: 0.875rem;
 }
@@ -348,3 +348,11 @@
     height: 100px;
   }
 }
+
+
+/* Supabase forced accents */
+h1, h2, h3, .titre-interne, .highlight { color: var(--sb-green) !important; }
+.info-bulle { border-left: 4px solid var(--sb-green) !important; }
+button.rouge, button.operateur, button.egal { background: var(--sb-green) !important; color: #fff !important; border-color: var(--sb-green) !important; }
+button.rouge:hover, button.operateur:hover, button.egal:hover { background: var(--sb-green-hover) !important; }
+.badge { border: 1px solid var(--sb-green) !important; color: var(--sb-green) !important; background: rgba(36, 180, 126, 0.1) !important; }

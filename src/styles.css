@@ -1,1 +1,86 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles */
+:root {
+  --sb-bg: #1c1c1c;
+  --sb-sidebar: #161616;
+  --sb-border: #2e2e2e;
+  --sb-green: #24b47e;
+  --sb-green-hover: #1e986b;
+  --sb-text: #ededed;
+  --sb-muted: #8b8b8b;
+  --sb-text-dark: #111111;
+  --sb-hover: #2a2a2a;
+  --sb-card: #232323;
+  --sb-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--sb-bg);
+  color: var(--sb-text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--sb-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sb-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--sb-muted);
+}
+
+/* Global Form Elements for Supabase Theme */
+input[type="text"], input[type="number"], input[type="password"], input[type="email"], select {
+  background: var(--sb-bg);
+  border: 1px solid var(--sb-border);
+  color: var(--sb-text);
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  width: 100%;
+  transition: all 0.2s;
+}
+input:focus, select:focus {
+  border-color: var(--sb-green);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(36, 180, 126, 0.2);
+}
+button {
+  background: var(--sb-card);
+  color: var(--sb-text);
+  border: 1px solid var(--sb-border);
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+button:hover {
+  background: var(--sb-hover);
+  border-color: var(--sb-muted);
+}
+button.primary, .meteo-btn, .search-btn, .egal {
+  background: var(--sb-green) !important;
+  color: #fff !important;
+  border-color: var(--sb-green) !important;
+}
+button.primary:hover, .meteo-btn:hover, .search-btn:hover, .egal:hover {
+  background: var(--sb-green-hover) !important;
+  border-color: var(--sb-green-hover) !important;
+}

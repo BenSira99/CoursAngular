@@ -5,34 +5,34 @@
 }
 
 .form-card {
-  background: white;
+  background: var(--sb-card);
   padding: 2.5rem;
   border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  box-shadow: var(--sb-shadow);
   width: 100%;
   max-width: 600px;
 }
 
-h2 { color: #1e293b; margin-bottom: 0.5rem; text-align: center; }
-.subtitle { color: #64748b; text-align: center; margin-bottom: 2rem; }
+h2 { color: var(--sb-text); margin-bottom: 0.5rem; text-align: center; }
+.subtitle { color: var(--sb-text); text-align: center; margin-bottom: 2rem; }
 
 .modern-form { display: flex; flex-direction: column; gap: 1.5rem; }
 
 .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
 
-label { font-weight: 600; color: #334155; font-size: 0.9rem; }
+label { font-weight: 600; color: var(--sb-text); font-size: 0.9rem; }
 
 input {
   padding: 0.75rem;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--sb-border);
   border-radius: 8px;
   font-size: 1rem;
   transition: border-color 0.2s;
 }
 
-input:focus { outline: none; border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); }
+input:focus { outline: none; border-color: var(--sb-text); box-shadow: var(--sb-shadow); }
 
-.error { color: #ef4444; font-size: 0.8rem; margin-top: 0.25rem; }
+.error { color: var(--sb-text); font-size: 0.8rem; margin-top: 0.25rem; }
 
 .actions { display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap; }
 
@@ -48,8 +48,16 @@ input:focus { outline: none; border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(5
 
 .btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
-.btn-save { background: #10b981; color: white; }
-.btn-cancel { background: #f1f5f9; color: #475569; }
-.btn-list { background: #3b82f6; color: white; }
+.btn-save { background: var(--sb-card); color: var(--sb-text); }
+.btn-cancel { background: var(--sb-card); color: var(--sb-text); }
+.btn-list { background: var(--sb-green); color: var(--sb-text); }
 
 .btn:hover:not(:disabled) { opacity: 0.9; }
+
+
+/* Supabase forced accents */
+h1, h2, h3, .titre-interne, .highlight { color: var(--sb-green) !important; }
+.info-bulle { border-left: 4px solid var(--sb-green) !important; }
+button.rouge, button.operateur, button.egal { background: var(--sb-green) !important; color: #fff !important; border-color: var(--sb-green) !important; }
+button.rouge:hover, button.operateur:hover, button.egal:hover { background: var(--sb-green-hover) !important; }
+.badge { border: 1px solid var(--sb-green) !important; color: var(--sb-green) !important; background: rgba(36, 180, 126, 0.1) !important; }

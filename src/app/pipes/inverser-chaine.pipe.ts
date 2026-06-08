@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 /**
  * Pipe pour inverser une chaîne de caractères.
- * @author BenSira99
+ * @author fatima
  */
 @Pipe({
   name: 'inverserChaine',

@@ -9,7 +9,7 @@ import { Personne } from '../../models/personne.model';
   styleUrl: './interpolation-demo.css'
 })
 export class InterpolationDemo {
-  etudiant: Personne = new Personne(21, 'Ben', 'Sira');
+  etudiant: Personne = new Personne(21, 'fatima', 'zare');
   tableauChiffres: number[] = [14, 10, 15, 20];
 
   direBonjour(): string {

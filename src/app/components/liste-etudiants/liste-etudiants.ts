@@ -41,13 +41,14 @@ import { Etudiant } from '../../models/etudiant.model';
     </div>
   `,
   styles: [`
-    .liste-container { padding: 2rem; background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-    h2 { color: #1e293b; margin-bottom: 1.5rem; }
+    .liste-container { padding: 2rem; background: var(--sb-card); border-radius: 12px; box-shadow: var(--sb-shadow); border: 1px solid var(--sb-border); }
+    h2 { color: var(--sb-green); margin-bottom: 1.5rem; }
     .etudiant-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
-    .etudiant-table th, .etudiant-table td { padding: 0.75rem; border: 1px solid #e2e8f0; text-align: left; }
-    .etudiant-table th { background: #f8fafc; color: #475569; }
-    .btn-retour { background: #3b82f6; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; cursor: pointer; }
-    .message-vide { color: #64748b; font-style: italic; margin-bottom: 1.5rem; }
+    .etudiant-table th, .etudiant-table td { padding: 0.75rem; border: 1px solid var(--sb-border); text-align: left; color: var(--sb-text); }
+    .etudiant-table th { background: var(--sb-bg); color: var(--sb-muted); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em; }
+    .btn-retour { background: var(--sb-green); color: white; border: 1px solid var(--sb-green); padding: 0.6rem 1.2rem; border-radius: 6px; cursor: pointer; font-weight: 500; transition: background 0.2s; }
+    .btn-retour:hover { background: var(--sb-green-hover); border-color: var(--sb-green-hover); }
+    .message-vide { color: var(--sb-muted); font-style: italic; margin-bottom: 1.5rem; }
   `]
 })
 export class ListeEtudiantsComponent implements OnInit {

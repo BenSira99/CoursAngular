@@ -9,7 +9,7 @@ import { RouterOutlet, Router } from '@angular/router';
 })
 export class AppComponent {
   private router = inject(Router);
-  protected readonly titre = 'Formation Angular BenSira';
+  protected readonly titre = 'Formation TP';
 
   /**
    * Méthode de navigation programmatique demandée

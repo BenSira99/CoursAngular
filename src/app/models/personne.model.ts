@@ -1,6 +1,6 @@
 /**
  * Classe représentant une personne.
- * @author BenSira99
+ * @author 
  */
 export class Personne {
   constructor(

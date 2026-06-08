@@ -2,33 +2,33 @@
   max-width: 900px;
   margin: 0 auto;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--sb-card);
   backdrop-filter: blur(10px);
   border-radius: 16px;
-  border: 1px solid rgba(229, 231, 235, 0.5);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid var(--sb-border);
+  box-shadow: var(--sb-shadow);
 }
 
 .demo-title {
-  color: #1e293b;
+  color: var(--sb-text);
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  border-bottom: 2px solid #e2e8f0;
+  border-bottom: 1px solid var(--sb-border);
   padding-bottom: 0.75rem;
   text-align: left;
 }
 
 .demo-section {
-  background: #ffffff;
+  background: var(--sb-card)fff;
   padding: 1.5rem;
   border-radius: 12px;
-  border: 1px solid #f1f5f9;
+  border: 1px solid var(--sb-border);
   margin-bottom: 2rem;
 }
 
 .section-title {
-  color: #334155;
+  color: var(--sb-text);
   font-size: 1.25rem;
   margin-bottom: 1.25rem;
   font-weight: 600;
@@ -42,8 +42,8 @@
 
 .data-item {
   padding: 0.75rem 0;
-  border-bottom: 1px solid #f1f5f9;
-  color: #475569;
+  border-bottom: 1px solid var(--sb-border);
+  color: var(--sb-text);
 }
 
 .data-item:last-child {
@@ -52,28 +52,28 @@
 
 .data-label {
   font-weight: 600;
-  color: #1e293b;
+  color: var(--sb-text);
   margin-right: 0.5rem;
 }
 
 .raw-data-box {
   margin-top: 1.5rem;
   padding: 1rem;
-  background: #f8fafc;
+  background: var(--sb-card);
   border-radius: 8px;
-  border-left: 4px solid #94a3b8;
+  border-left: 1px solid var(--sb-border);
 }
 
 .raw-data-text {
   margin: 0;
-  color: #64748b;
+  color: var(--sb-text);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 0.9rem;
 }
 
 .json-pre {
-  background: #1e293b;
-  color: #94a3b8;
+  background: var(--sb-card);
+  color: var(--sb-text);
   padding: 1.25rem;
   border-radius: 8px;
   font-size: 0.85rem;
@@ -82,10 +82,18 @@
 }
 
 .method-response {
-  background: #f1f5f9;
-  color: #334155;
+  background: var(--sb-card);
+  color: var(--sb-text);
   padding: 1rem;
   border-radius: 8px;
   font-weight: 500;
-  border-left: 4px solid #3b82f6;
+  border-left: 1px solid var(--sb-border);
 }
+
+
+/* Supabase forced accents */
+h1, h2, h3, .titre-interne, .highlight { color: var(--sb-green) !important; }
+.info-bulle { border-left: 4px solid var(--sb-green) !important; }
+button.rouge, button.operateur, button.egal { background: var(--sb-green) !important; color: #fff !important; border-color: var(--sb-green) !important; }
+button.rouge:hover, button.operateur:hover, button.egal:hover { background: var(--sb-green-hover) !important; }
+.badge { border: 1px solid var(--sb-green) !important; color: var(--sb-green) !important; background: rgba(36, 180, 126, 0.1) !important; }

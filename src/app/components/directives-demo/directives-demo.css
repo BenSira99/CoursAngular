@@ -1,8 +1,8 @@
 .conteneur-directives {
-  background: white;
+  background: var(--sb-card);
   padding: 2rem;
   border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  box-shadow: var(--sb-shadow);
   text-align: left;
 }
 
@@ -11,22 +11,22 @@
 }
 
 h3 {
-  color: #334155;
+  color: var(--sb-text);
   font-size: 1.15rem;
   margin-bottom: 0.5rem;
   font-weight: 600;
 }
 
 .description {
-  color: #64748b;
+  color: var(--sb-text);
   font-size: 0.9rem;
   margin-bottom: 1.25rem;
 }
 
 .separateur {
   margin: 2.5rem 0;
-  border: 0;
-  border-top: 1px solid #f1f5f9;
+  border: 1px solid var(--sb-border);
+  border-top: 1px solid var(--sb-border);
 }
 
 /* Grille for */
@@ -37,10 +37,10 @@ h3 {
 }
 
 .carte-note {
-  background: #f8fafc;
+  background: var(--sb-card);
   padding: 1.25rem 1rem;
   border-radius: 10px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--sb-border);
   text-align: center;
   position: relative;
   transition: transform 0.2s;
@@ -48,22 +48,22 @@ h3 {
 
 .carte-note:hover {
   transform: translateY(-2px);
-  border-color: #cbd5e1;
+  border-color: var(--sb-text);
 }
 
 .border-premier {
-  border: 1px solid #94a3b8;
-  background: #f1f5f9;
+  border: 1px solid var(--sb-border);
+  background: var(--sb-card);
 }
 
 .border-dernier {
-  border: 1px solid #94a3b8;
+  border: 1px solid var(--sb-border);
 }
 
 .etiquette-note {
   display: block;
   font-size: 0.75rem;
-  color: #64748b;
+  color: var(--sb-text);
   margin-bottom: 0.25rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -72,7 +72,7 @@ h3 {
 .valeur-note {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #1e293b;
+  color: var(--sb-text);
 }
 
 .badge-special {
@@ -82,13 +82,13 @@ h3 {
   font-size: 0.6rem;
   padding: 0.15rem 0.4rem;
   border-radius: 6px;
-  color: white;
+  color: var(--sb-text);
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.badge-premier { background: #64748b; }
-.badge-dernier { background: #94a3b8; }
+.badge-premier { background: var(--sb-card); }
+.badge-dernier { background: var(--sb-card); }
 
 /* Boutons Switch */
 .boutons-niveaux {
@@ -100,49 +100,49 @@ h3 {
 .boutons-niveaux button {
   padding: 0.5rem 1rem;
   border-radius: 6px;
-  border: 1px solid #e2e8f0;
-  background: #f8fafc;
+  border: 1px solid var(--sb-border);
+  background: var(--sb-card);
   cursor: pointer;
   transition: all 0.2s;
   font-size: 0.85rem;
-  color: #475569;
+  color: var(--sb-text);
 }
 
 .boutons-niveaux button:hover {
-  border-color: #94a3b8;
+  border-color: var(--sb-text);
 }
 
 .boutons-niveaux button.actif {
-  background: #334155;
-  color: white;
-  border-color: #334155;
+  background: var(--sb-card);
+  color: var(--sb-text);
+  border-color: var(--sb-text);
 }
 
 .message-switch {
   padding: 1rem;
   border-radius: 8px;
   font-size: 0.95rem;
-  border: 1px solid #e2e8f0;
-  background: #f8fafc;
-  color: #334155;
+  border: 1px solid var(--sb-border);
+  background: var(--sb-card);
+  color: var(--sb-text);
 }
 
 .message-debutant, .message-intermediaire, .message-expert, .message-defaut {
-  border-left: 3px solid #64748b;
+  border-left: 1px solid var(--sb-border);
 }
 
 /* Style ngStyle */
 .controleur-style {
-  background: #f8fafc;
+  background: var(--sb-card);
   padding: 1.25rem;
   border-radius: 10px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--sb-border);
 }
 
 .barre-conteneur {
   width: 100%;
   height: 12px;
-  background-color: #e2e8f0;
+  background-color: var(--sb-hover);
   border-radius: 6px;
   overflow: hidden;
   margin-top: 1rem;
@@ -153,3 +153,11 @@ h3 {
   transition: width 0.3s ease, background-color 0.3s ease;
   border-radius: 6px;
 }
+
+
+/* Supabase forced accents */
+h1, h2, h3, .titre-interne, .highlight { color: var(--sb-green) !important; }
+.info-bulle { border-left: 4px solid var(--sb-green) !important; }
+button.rouge, button.operateur, button.egal { background: var(--sb-green) !important; color: #fff !important; border-color: var(--sb-green) !important; }
+button.rouge:hover, button.operateur:hover, button.egal:hover { background: var(--sb-green-hover) !important; }
+.badge { border: 1px solid var(--sb-green) !important; color: var(--sb-green) !important; background: rgba(36, 180, 126, 0.1) !important; }
